@@ -1,0 +1,6 @@
+Flask
+Flask-SocketIO
+requests
+pymongo
+Flask-Dance[google]
+python-dotenv
