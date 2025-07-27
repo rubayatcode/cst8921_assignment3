@@ -57,5 +57,3 @@ test_api.py      - Pytest file for backend API tests
 requirements.txt - Python dependencies list
 README.txt       - Project documentation (this file)
 
-Author: Nidhi
-CST IoT Project – Backend Development
