@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>IoT Fire Detection</title>
+  <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
+</head>
+<body>
+
+  <h2>Welcome to IoT Fire Detection Dashboard</h2>
+  <p>This page will show fire alerts in real time.</p>
+
+  <div id="alert-box" style="display:none; color: red; border: 1px solid red; padding: 10px; margin-top: 20px;">
+    <!-- Alert will appear here -->
+  </div>
+
+  <script>
+    const socket = io();
+
+    socket.on('fire_alert', function(data) {
+      const alertBox = document.getElementById('alert-box');
+      alertBox.innerHTML = `
+        <strong>Fire Alert!</strong><br>
+        Temperature: ${data.temperature} °C<br>
+        Smoke: ${data.smoke}
+      `;
+      alertBox.style.display = 'block';
+    });
+  </script>
+
+</body>
+</html>
