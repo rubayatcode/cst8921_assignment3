@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, render_template
 from flask_socketio import SocketIO, emit
 
 # Threshold config (previously in config.py)
@@ -8,7 +8,9 @@ SMOKE_THRESHOLD = 300  # arbitrary smoke level
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'secret!'
 socketio = SocketIO(app, cors_allowed_origins="*")
-
+@app.route('/')
+def home():
+    return render_template('index.html')
 @app.route('/sensor-data', methods=['POST'])
 def receive_data():
     data = request.get_json()
