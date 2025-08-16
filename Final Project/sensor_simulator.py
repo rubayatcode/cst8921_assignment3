@@ -2,7 +2,7 @@ import requests
 import time
 import random
 
-API_URL = "http://localhost:5001/sensor-data"
+API_URL = "http://localhost:5000/sensor-data"
 
 def generate_sensor_data():
     return {
